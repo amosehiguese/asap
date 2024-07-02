@@ -58,8 +58,25 @@ export const authApi = createApi({
         method: "POST",
         body: {password}
       })
+    }),
+
+    sendOtp: builder.query<void,void>({
+      query: () => "/send-otp"
+    }),
+
+    logout: builder.query<void,void>({
+      query: () => "/check-auth"
     })
   })
 })
 
-export const {useLoginMutation, useForgotPasswordMutation, useResetPasswordMutation, useSignupMutation, useVerifyOtpMutation, useVerifyPasswordMutation } = authApi
+export const {
+  useLoginMutation,
+  useForgotPasswordMutation,
+  useResetPasswordMutation,
+  useSignupMutation,
+  useVerifyOtpMutation,
+  useVerifyPasswordMutation,
+  useLazyLogoutQuery,
+  useLazySendOtpQuery,
+} = authApi

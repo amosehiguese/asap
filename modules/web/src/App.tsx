@@ -13,6 +13,7 @@ import {
   Diagnosis,
   Dashboard,
 } from './pages'
+import { ProtectedRoute } from './features/auth/ProtectedRoute'
 
 const router = createBrowserRouter([
   {
