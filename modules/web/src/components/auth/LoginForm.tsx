@@ -44,6 +44,7 @@ const LoginForm = () => {
           <SubmitButton
             disabled={isLoading}
             btnText="Login"
+            className="w-full bg-primary text-white px-6 py-3 rounded shadow-lg font-medium"
           />
         </div>
 
