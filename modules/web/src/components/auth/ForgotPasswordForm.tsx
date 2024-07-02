@@ -1,8 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { forgotPasswordSchema, forgotPasswordSchemaType } from "../schemas"
-import { useForgotPassword } from "../hooks/useForgotPassword"
-import { FormInput } from "./common/FormInput"
+import { forgotPasswordSchema, forgotPasswordSchemaType } from "../../schemas"
+import { useForgotPassword } from "../../hooks/useForgotPassword"
+import { FormInput, SubmitButton } from "../common"
 
 const ForgotPasswordForm = () => {
   const { register , handleSubmit, formState: {errors}, setValue} = useForm<forgotPasswordSchemaType>({
@@ -24,7 +24,7 @@ const ForgotPasswordForm = () => {
         register={{...register("email")}}
         error={errors.email?.message}
       />
-
+      <SubmitButton btnText="Send reset link" className="bg-primary px-6 py-2 rounded-sm" />
     </form>
   )
 }
