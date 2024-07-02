@@ -6,7 +6,8 @@ const passwordValidation = z.string({required_error:"Password is required"}).min
 const emailValidation = z.string({required_error:"Email is required"}).regex(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,'Please enter a valid email')
 
 const signupSchema = z.object({
-    name:z.string({required_error:"name is required"}).min(3,'name cannot be shorter than 3 characters').max(20,"name cannot be longer than 20 characters"),
+    firstname:z.string({required_error:"firstname is required"}).min(3,'name cannot be shorter than 3 characters').max(20,"name cannot be longer than 20 characters"),
+    lastname:z.string().min(3, 'name cannot be shorter than 3 characters').max(20,"name cannot be longer than 20 characters"),
     email:emailValidation,
     password:passwordValidation,
     confirmPassword:z.string()
