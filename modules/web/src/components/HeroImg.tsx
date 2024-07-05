@@ -1,5 +1,6 @@
 import Lottie from "lottie-react"
-import { heroRobotAnimation } from "../assets"
+import { heroRobotAnimation, darkRobotAnimation } from "../assets"
+import { useAppSelector } from "../hooks/useAppSelector"
 
 type PropTypes = {
   divclasses?: string
@@ -7,10 +8,15 @@ type PropTypes = {
 }
 
 const HeroImg = ({divclasses , imgclasses}: PropTypes) => {
+  const theme = useAppSelector(state => state.themeState.theme)
   return (
     <div className={divclasses}>
       <div className={imgclasses}>
-        <Lottie className="w-5/6" loop={false} animationData={heroRobotAnimation}/>
+        {theme === 'dark' ?
+          <Lottie className="w-5/6" loop={false} animationData={darkRobotAnimation}/>
+          :
+          <Lottie className="w-5/6" loop={false} animationData={heroRobotAnimation}/>
+        }
       </div>
     </div>
   )
