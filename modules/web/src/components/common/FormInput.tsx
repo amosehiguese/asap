@@ -19,7 +19,7 @@ const FormInput = ({register, error, placeholder, maxLength, autoComplete="off",
       maxLength={maxLength ? maxLength : null}
       autoComplete={autoComplete}
       type={type}
-      className="p-3 rounded outline outline-1 outline-secondary-dark text-white bg-background hover:outline-primary"
+      className="p-3 rounded outline outline-1 outline-secondary-dark text-dark bg-background hover:outline-primary"
       placeholder={placeholder}
     />
     {error && <p className="text-red-500" text-sm>{error}</p>}
