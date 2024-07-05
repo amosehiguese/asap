@@ -5,5 +5,5 @@ type Link = {
 
 export const links: Link[] = [
   {href: '/', label: 'home'},
-  {href: 'dashboard', label: 'dashboard'},
+  {href: 'about', label: 'about'},
 ]
