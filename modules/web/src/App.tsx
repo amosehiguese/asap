@@ -11,7 +11,9 @@ import {
   Signup,
   Profile,
   Diagnosis,
-  Dashboard,
+  ForgotPassword,
+  VerificationPage,
+  AuthLayout,
 } from './pages'
 import { ProtectedRoute } from './features/auth/ProtectedRoute'
 
@@ -35,11 +37,6 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard/>,
-        errorElement: <ErrorElement/>,
-      },
-      {
-        path: 'chat',
         element: <Chat/>,
         errorElement: <ErrorElement/>,
       },
@@ -57,12 +54,35 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/login',
-    element: <Login/>
-  },
-  {
-    path: '/signup',
-    element: <Signup/>
+    path: '/auth',
+    element: <AuthLayout/>,
+    errorElement: <Error/>,
+    children: [
+      {
+        path: 'login',
+        element: <Login/>,
+        errorElement: <ErrorElement/>,
+
+      },
+      {
+        path: 'signup',
+        element: <Signup/>,
+        errorElement: <ErrorElement/>,
+
+      },
+      {
+        path: 'forgot-password',
+        element: <ForgotPassword/>,
+        errorElement: <ErrorElement/>,
+
+      },
+      {
+        path: 'verification',
+        element: <VerificationPage/>,
+        errorElement: <ErrorElement/>,
+
+      }
+    ]
   }
 ])
 

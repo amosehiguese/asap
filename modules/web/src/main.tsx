@@ -6,11 +6,14 @@ import './index.css'
 
 import { Provider } from 'react-redux'
 import { store } from './store'
+import { TooltipProvider } from './components/ui/tooltip'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
     <Provider store={store}>
-      <App />
+      <TooltipProvider>
+        <App />
+      </TooltipProvider>
       <Toaster/>
     </Provider>
   </HelmetProvider>
