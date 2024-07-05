@@ -16,7 +16,7 @@ const Login = () => {
 
       {/* Main */}
       <section className="flex flex-col gap-y-8">
-        <h3 className="text-4xl text-fluid-h3 font-bold">Login</h3>
+        <h3 className="text-4xl text-fluid-h3 font-bold text-center">Login</h3>
       </section>
 
       <LoginForm/>
