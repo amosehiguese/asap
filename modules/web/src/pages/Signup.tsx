@@ -3,7 +3,6 @@ import { SignupForm } from "../components/auth"
 
 const Signup = () => {
   return (
-
     <>
       <Helmet>
         <title>Signup | Syp</title>
@@ -12,7 +11,7 @@ const Signup = () => {
       </Helmet>
 
       <div className="flex flex-col gap-y-8">
-        <div className="text-4xl font-bold text-fluid-h4">Signup</div>
+        <div className="text-4xl font-bold text-fluid-h4 text-center">Signup</div>
       </div>
 
       <SignupForm/>
