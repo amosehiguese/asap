@@ -1,8 +1,10 @@
+import { ChatBody, ChatHeader } from "../components/chat"
 
 const Chat = () => {
   return (
-    <div>
-      chat
+    <div className="flex flex-col">
+      <ChatHeader/>
+      <ChatBody/>
     </div>
   )
 }
