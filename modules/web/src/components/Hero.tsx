@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
       <div>
-        <h1 className="max-w-2xl font-bold text-2xl lg:text-4xl tracking-tight capitalize sm:text-6xl">
+        <h1 className="max-w-2xl font-bold text-3xl lg:text-4xl tracking-tight capitalize sm:text-6xl">
           Your AI-Based Symptom Checker
         </h1>
         <HeroImg divclasses="lg:hidden"/>
