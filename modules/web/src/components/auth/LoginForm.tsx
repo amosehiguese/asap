@@ -21,7 +21,7 @@ const LoginForm = () => {
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col gap-y-1">
           <FormInput
-            autoComplete="email webauth"
+            autoComplete="email webauthn"
             placeholder="Email"
             register={register("email")}
             error={errors.email?.message}
@@ -30,7 +30,7 @@ const LoginForm = () => {
 
         <div className="flex flex-col gap-y-1">
           <FormInput
-            autoComplete="current-password webauth"
+            autoComplete="current-password webauthn"
             type="password"
             placeholder="Password"
             register={register("password")}
@@ -50,12 +50,12 @@ const LoginForm = () => {
 
         <div className="flex justify-between items-center flex-wrap gap-1">
           <RedirectLink
-            pageName="signup"
+            pageName="Signup"
             text="Already a member?"
             to="auth/signup"
           />
           <RedirectLink
-            pageName="forgot password"
+            pageName="Forgot password"
             text="Need Help?"
             to="auth/forgot-password"
           />

@@ -26,7 +26,7 @@ const OtpVerficationForm = () => {
         />
       </div>
 
-      <SubmitButton disabled={isLoading} className="bg-primary px-6 py-2 rounded-sm" btnText="Verify OTP"/>
+      <SubmitButton disabled={isLoading} className="bg-primary text-white px-6 py-2 rounded-sm" btnText="Verify OTP"/>
     </form>
   )
 }

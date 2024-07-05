@@ -27,7 +27,7 @@ const SignupForm = () => {
             <FormInput
               name="firstname"
               autoComplete="firstname webauth"
-              placeholder="firstname"
+              placeholder="Firstname"
               register={register("firstname")}
               error={errors.firstname?.message}
             />
@@ -37,7 +37,7 @@ const SignupForm = () => {
             <FormInput
               name="lastname"
               autoComplete="lastname webauth"
-              placeholder="lastname"
+              placeholder="Lastname"
               register={register("lastname")}
               error={errors.lastname?.message}
             />
@@ -47,7 +47,7 @@ const SignupForm = () => {
             <FormInput
               name="email"
               autoComplete="email"
-              placeholder="email"
+              placeholder="Email"
               register={register("email")}
               error={errors.email?.message}
             />
