@@ -7,19 +7,19 @@ import { botAnimation } from '../../assets'
 
 const ChatHeader = () => {
   return (
-    <Header text='Symptom Checker'>
-      <div className="w-10 h-10">
-        <Lottie loop={true} animationData={botAnimation}/>
-      </div>
-      <Button
-        variant="outline"
-        size="sm"
-        className="ml-auto gap-1.5 text-sm"
+      <Header text='Symptom Checker'>
+        <div className="w-10 h-10 hidden lg:flex">
+          <Lottie loop={true} animationData={botAnimation}/>
+        </div>
+        <Button
+          variant="outline"
+          size="sm"
+          className="ml-auto gap-1.5 text-sm"
         >
-        <Share className="size-3.5" />
-        Export to PDF
-      </Button>
-    </Header>
+            <Share className="size-3.5" />
+            Export to PDF
+        </Button>
+      </Header>
   )
 }
 
