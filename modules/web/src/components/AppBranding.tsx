@@ -9,7 +9,7 @@ const AppBranding = () => {
         <div className="text-inherit bg-inherit flex flex-col gap-y-2">
             <div className="flex flex-col gap-y-1">
                 <div className="flex items-center gap-x-4">
-                    <Logo/>
+                    <Logo hidden={false} sm={false}/>
                     <div className="w-10 h-10">
                         <Lottie loop={true} animationData={chatAnimation}/>
                     </div>

@@ -4,20 +4,20 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
-import { AlignLeft } from "lucide-react"
+import { AlignRight } from "lucide-react"
 import { Button } from "./ui/button"
 import { links } from "../utils/links"
-import { NavLink } from "react-router-dom"
-// import { useAppSelector } from "../hooks/useAppSelector"
+import { Link } from "react-router-dom"
+import { useAppSelector } from "../hooks/useAppSelector"
 
 
 const LinksDropDown = () => {
-  // const user = useAppSelector((state)=> state.userState.loggedUser)
+  const user = useAppSelector((state)=> state.userState.loggedUser)
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="lg:hidden">
         <Button variant="outline" size="icon">
-          <AlignLeft />
+          <AlignRight />
           <span className="sr-only">Toggle Links</span>
         </Button>
       </DropdownMenuTrigger>
@@ -29,17 +29,37 @@ const LinksDropDown = () => {
         {links.map((link)=>{
           return (
             <DropdownMenuItem key={link.label}>
-              <NavLink
+              <Link
                 to={link.href}
-                className={({ isActive }) => {
-                  return `capitalize w-full ${isActive ? "text-primary" : ""}`
-                }}
+                className='capitalize w-full text-primary'
               >
                 {link.label}
-              </NavLink>
+              </Link>
             </DropdownMenuItem>
           )
         })}
+
+        <DropdownMenuItem>
+          <div className="lg:flex justify-center items-center gap-x-4">
+            {
+            user ? (
+              <Button asChild size="sm" className="rounded-lg">
+                <Link to="/dashboard" className="tracking-wider capitalize">Go To Dashboard</Link>
+              </Button>
+            ): (
+              <div className='flex gap-x-6 justify-center items-center -mr-4'>
+              <Button asChild size='sm' className="rounded-lg">
+                <Link to='/auth/login' className="tracking-wider capitalize text-lg">Sign in</Link>
+              </Button>
+
+              <Button asChild size='sm' className="rounded-lg">
+                <Link to='/auth/signup' className="tracking-wider capitalize text-lg">Sign up</Link>
+              </Button>
+            </div>
+            )
+          }
+          </div>
+        </DropdownMenuItem>
       </DropdownMenuContent>
 
     </DropdownMenu>
