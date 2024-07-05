@@ -1,10 +1,13 @@
 import { Outlet } from 'react-router-dom'
+import { Navbar } from '../components'
 
 const HomeLayout = () => {
   return (
-    <div>
-      HomeLayout
+    <div className='min-h-screen'>
+      <Navbar/>
+      <div className="align-element py-10">
       <Outlet/>
+      </div>
     </div>
   )
 }
