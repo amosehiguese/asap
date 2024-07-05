@@ -3,6 +3,7 @@ import { OtpVerficationForm } from "../components/auth";
 import { useSendOtp } from "../hooks/useSendOtp";
 import { AuthUser } from "../features/user/userSlice";
 import { useAppSelector } from "../hooks/useAppSelector";
+import { Button } from "../components/ui/button";
 
 const VerificationPage = () => {
   const user = useAppSelector(AuthUser)
@@ -28,7 +29,7 @@ const VerificationPage = () => {
       </div>
 
       <div>
-        {isSuccess ? <OtpVerficationForm/> : <button disabled={isLoading} onClick={handleSendOtp} type="submit" className="bg-primary px-6 py-2 rounded-sm max-sm:w-full">Send OTP</button>}
+        {isSuccess ? <OtpVerficationForm/> : <Button disabled={isLoading} onClick={handleSendOtp} type="submit" className="px-6 py-2 rounded-sm max-sm:w-full">Send OTP</Button>}
       </div>
     </section>
 
