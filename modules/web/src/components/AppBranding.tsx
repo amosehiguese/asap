@@ -1,5 +1,5 @@
 import Lottie from "lottie-react"
-import { botAnimation, authBotAnimation,chatAnimation, heroRobotAnimation } from "../assets"
+import { authBotAnimation,chatAnimation } from "../assets"
 
 import Logo from "./Logo"
 
