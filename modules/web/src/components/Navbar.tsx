@@ -16,16 +16,16 @@ const Navbar = () => {
           {
           user ? (
             <Button asChild size="sm" className="rounded-lg">
-              <Link to="/dashboard" className="tracking-wider uppercase">Go To Dashboard</Link>
+              <Link to="/dashboard" className="tracking-wider capitalize text-xl">Go To Dashboard</Link>
             </Button>
           ): (
             <div className='flex gap-x-6 justify-center items-center -mr-4'>
-            <Button asChild size='sm' className="rounded-lg">
-              <Link to='/auth/login' className="tracking-wider uppercase text-lg">Sign in</Link>
+            <Button asChild variant='ghost' size='sm' className="rounded-lg">
+              <Link to='/auth/login' className="tracking-wider capitalize text-xl">Sign in</Link>
             </Button>
 
             <Button asChild size='sm' className="rounded-lg">
-              <Link to='/auth/signup' className="tracking-wider uppercase text-lg">Sign up</Link>
+              <Link to='/auth/signup' className="tracking-wider capitalize text-xl">Sign up</Link>
             </Button>
           </div>
           )
