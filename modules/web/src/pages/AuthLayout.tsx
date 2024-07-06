@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom"
 import { AppBranding, Logo } from "../components"
-import Lottie from "lottie-react"
-import { chatAnimation } from "../assets"
 
 const AuthLayout = () => {
   return (
@@ -14,7 +12,7 @@ const AuthLayout = () => {
           <AppBranding/>
         </div>
 
-        <div className="w-[30rem] h-fit p-8 flex flex-col gap-y-14 shadow-xl ">
+        <div className="w-[30rem] bg-muted rounded-lg mt-4 h-fit p-8 flex flex-col gap-y-14 shadow-xl ">
             <Outlet/>
         </div>
       </div>

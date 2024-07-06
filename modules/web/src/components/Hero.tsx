@@ -17,7 +17,7 @@ const Hero = () => {
           Interact with a medical AI assistant and get
           quick feedback on your health as soon as possible.
         </p>
-        <Button asChild size="lg" className="mt-10 rounded-lg bg-purple-500 text-foreground">
+        <Button asChild size="lg" className="mt-10 rounded-lg">
           <Link to="/dashboard" className="uppercase text-xl tracking-wider">
             Get Started
           </Link>

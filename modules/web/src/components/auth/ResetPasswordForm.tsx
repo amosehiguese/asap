@@ -36,7 +36,7 @@ const ResetPasswordForm = ({token, user}: PropTypes) => {
 
       <SubmitButton
         disabled={isLoading}
-        className="bg-primary px-6 py-2 rounded-sm"
+        className="px-6 py-2 rounded-sm"
         btnText="Update password"
       />
 

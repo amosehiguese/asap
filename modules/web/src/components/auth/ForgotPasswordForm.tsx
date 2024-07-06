@@ -24,7 +24,7 @@ const ForgotPasswordForm = () => {
         register={{...register("email")}}
         error={errors.email?.message}
       />
-      <SubmitButton btnText="Send reset link" className="w-full bg-primary text-white px-6 py-3 rounded shadow-lg font-medium" />
+      <SubmitButton btnText="Send reset link" className="w-full px-6 py-3 rounded shadow-lg font-medium" />
     </form>
   )
 }

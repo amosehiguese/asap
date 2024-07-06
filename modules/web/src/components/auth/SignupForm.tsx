@@ -78,7 +78,7 @@ const SignupForm = () => {
             <SubmitButton
               btnText="Signup"
               disabled={isLoading}
-              className="w-full bg-primary text-white px-6 py-3 rounded shadow-lg font-medium"
+              className="w-full px-6 py-3 rounded shadow-lg font-medium"
             />
           </div>
           <RedirectLink
