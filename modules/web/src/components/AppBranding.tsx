@@ -10,9 +10,6 @@ const AppBranding = () => {
             <div className="flex flex-col gap-y-1">
                 <div className="flex items-center gap-x-4">
                     <Logo hidden={false} sm={false}/>
-                    <div className="w-10 h-10">
-                        <Lottie loop={true} animationData={chatAnimation}/>
-                    </div>
                 </div>
                 <h2 className="text-2xl font-semibold">Your AI-Based Symptom Checker</h2>
             </div>
