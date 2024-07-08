@@ -15,7 +15,6 @@ import {
   VerificationPage,
   AuthLayout,
 } from './pages'
-import { ProtectedRoute } from './features/auth/ProtectedRoute'
 
 const router = createBrowserRouter([
   {
