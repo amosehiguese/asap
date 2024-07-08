@@ -46,7 +46,11 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Install dependencies
-        run: go mod tidy
+        run: |
+          set -euo pipefail
+          make tidy
 
       - name: Run tests
-        run: go test -v ./...
+        run: |
+          set -euo pipefail
+          make tests
