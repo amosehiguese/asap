@@ -3,7 +3,7 @@ import { Navbar } from '../components'
 
 const HomeLayout = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='h-screen'>
       <Navbar/>
       <div className="align-element py-10">
       <Outlet/>

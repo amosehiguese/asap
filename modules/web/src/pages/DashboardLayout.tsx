@@ -1,10 +1,7 @@
-import { Bot, BriefcaseMedicalIcon, Home, Layers, PanelLeft, Settings, SquareUser } from 'lucide-react'
+import { Bot, BriefcaseMedicalIcon, Layers, SquareUser } from 'lucide-react'
 import { NavLink, Link, Outlet } from 'react-router-dom'
 import { Tooltip, TooltipContent, TooltipTrigger } from '../components/ui/tooltip'
-import { Sheet, SheetContent, SheetTrigger } from '../components/ui/sheet'
 import { Button } from '../components/ui/button'
-import { DropdownMenu } from '@radix-ui/react-dropdown-menu'
-import { DropdownMenuTrigger } from '../components/ui/dropdown-menu'
 import { MoodToggle } from '../components/dashboard'
 
 const DashboardLayout = () => {
