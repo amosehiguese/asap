@@ -1,1 +1,5 @@
 package asap
+
+func main() {
+
+}

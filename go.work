@@ -1,3 +1,11 @@
 go 1.22.2
 
-use ./modules/asap
+use (
+	./modules/asap
+	./pkg/auth
+	./pkg/config
+	./pkg/jwt
+	./pkg/repo
+	./pkg/utils
+	./pkg/validator
+)
