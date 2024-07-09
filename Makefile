@@ -21,3 +21,9 @@ build: tests
 start: build
 	@echo "\nStarting server...\n"
 	./bin/dc
+
+.PHONY: web
+web:
+	@echo "\nStarting react frontend...\n"
+	cd modules/web
+	pnpm --prefix modules/web run dev
