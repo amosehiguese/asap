@@ -2,7 +2,7 @@ package config
 
 import "pkg/utils"
 
-type config struct {
+type Config struct {
 	Env         string
 	Server      *serverConfig
 	Database    *databaseConfig
@@ -11,9 +11,9 @@ type config struct {
 	ObjectStore *objectStoreConfig
 }
 
-var c config
+var c Config
 
-func initConfig() *config {
+func initConfig() *Config {
 	c.Server = setServerConfig()
 	c.Database = setDatabaseConfig()
 	c.Security = setSecurityConfig()
@@ -24,7 +24,7 @@ func initConfig() *config {
 	return &c
 }
 
-func GetConfig() *config {
+func GetConfig() *Config {
 	if c.Server == nil || c.Database == nil || c.Security == nil || c.ObjectStore == nil {
 		c = *initConfig()
 	}
