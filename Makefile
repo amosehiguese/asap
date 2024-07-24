@@ -13,17 +13,22 @@ tests:
 	go list -f '{{.Dir}}' -m | xargs go test
 
 .PHONY: build
-build: tests
+build:
 	@echo "\nBuilding server module...\n"
 	go build -o bin/asap -ldflags="-X main.Version=$(VERSION)" $(WORKSPACE)/modules/asap
 
-.PHONY: start
-start: build
+.PHONY: server
+server: build
 	@echo "\nStarting server...\n"
-	./bin/dc
+	./bin/asap
 
 .PHONY: web
 web:
 	@echo "\nStarting react frontend...\n"
-	cd modules/web
 	pnpm --prefix modules/web run dev
+
+.PHONY: init-sh
+init-sh:
+	@echo "\Initializing script...\n"
+	chmod +x ./scripts/init.sh
+	./scripts/init.sh
