@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { toast } from "sonner";
+import { toast } from "react-hot-toast";
 import { isErrorWithMessage } from "../utils";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
@@ -38,7 +38,7 @@ export const useToast = ({error, isError, isLoading, isSuccess, isUninitialized,
 
       if(!isLoading && isSuccess && !isError){
         if(successToast){
-          toast.dismiss
+          toast.dismiss()
           toast.success(successMessage)
         }
       }

@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
-import { Toaster } from 'sonner'
+import { Toaster } from 'react-hot-toast'
+import { SocketProvider } from './context/socket'
 import App from './App'
 import './index.css'
 
@@ -12,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
     <Provider store={store}>
       <TooltipProvider>
-        <App />
+        <SocketProvider>
+          <App />
+        </SocketProvider>
       </TooltipProvider>
       <Toaster/>
     </Provider>

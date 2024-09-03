@@ -9,20 +9,20 @@ const ResetPasswordPage = () => {
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const token = queryParams.get('token')
-  const user = queryParams.get('user')
+  const email = queryParams.get('email')
 
   useEffect(()=>{
-    if(!token || !user) {
+    if(!token || !email) {
       navigate("/auth/login")
     }
-  }, [token, user])
+  }, [token, email])
 
   return (
     <>
       <Helmet>
-      <title>Reset Password | Syp</title>
+      <title>Reset Password | Asap</title>
         <meta name="description" content="Reset your password to regain access to your Syp account." />
-        <link rel="canonical" href={`${window.location.origin}/auth/reset-password?token=${token}&user=${user}`} />
+        <link rel="canonical" href={`${window.location.origin}/auth/reset-password?token=${token}&user=${email}`} />
       </Helmet>
 
       <div className="flex flex-col gap-y-6">
@@ -32,7 +32,7 @@ const ResetPasswordPage = () => {
         </div>
 
         <div>
-          {token && user && <ResetPasswordForm token={token} user={user}/>}
+          {token && email && <ResetPasswordForm token={token} email={email}/>}
         </div>
       </div>
 

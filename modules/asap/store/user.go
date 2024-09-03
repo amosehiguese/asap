@@ -3,7 +3,6 @@ package store
 import (
 	"time"
 
-	"pkg/auth"
 	"pkg/repo"
 	"pkg/utils"
 
@@ -18,7 +17,7 @@ type User struct {
 	LastName                    *string    `gorm:"size:255" json:"lastname,omitempty" validate:"lte=255"`
 	Email                       string     `gorm:"uniqueIndex;not null" json:"email" validate:"required,email,lte=255"`
 	Password                    string     `gorm:"size:255;not null" json:"-" validate:"required,lte=255"`
-	Role                        auth.Role  `gorm:"size:25;not null" json:"role" validate:"required,lte=25"`
+	Role                        string     `gorm:"size:25;not null" json:"role" validate:"required,lte=25"`
 	Verified                    *time.Time `json:"verified,omitempty"`
 	IsVerified                  bool       `gorm:"default:false" json:"is_verified"`
 	VerificationToken           string     `gorm:"size:255" json:"-" validate:"required,lte=255"`
@@ -26,8 +25,8 @@ type User struct {
 	PasswordTokenExpirationDate *time.Time `json:"password_token_expiration_date,omitempty"`
 	NotificationEnabled         bool       `gorm:"default:false" json:"notification_enabled"`
 	LastSeen                    time.Time  `json:"last_seen,omitempty"`
-	Profile                     Profile    `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL" json:"profile"`
-	ProfileID                   string
+	Profile                     *Profile   `json:"profile"`
+	ProfileID                   *string
 }
 
 func (u *User) TableName() string {

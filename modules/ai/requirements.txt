@@ -1,0 +1,13 @@
+Flask==3.0.3
+flask-socketio
+langchain-google-genai
+langchain
+langchain-community
+langchainhub
+langchain-chroma
+langgraph
+langgraph-checkpoint-sqlite
+langchain-text-splitters
+langchain-core
+jq
+bs4

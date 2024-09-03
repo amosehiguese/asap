@@ -8,6 +8,7 @@ DATABASE_USER="${POSTGRES_USER:=asap}"
 DATABASE_PASSWORD="${POSTGRES_PASSWORD:=password}"
 DATABASE_NAME="${POSTGRES_NAME:=asapdb}"
 DATABASE_PORT="${POSTGRES_PORT:=5432}"
+REDIS_PASSWORD="${REDIS_PASSWORD:=password}"
 
 if [[ -z "${SKIP_DOCKER}" ]]
 then
@@ -17,6 +18,12 @@ then
     -e POSTGRES_PASSWORD=${DATABASE_PASSWORD} \
     -e POSTGRES_USER=${DATABASE_USER} \
     postgres:15.2
+
+  # Redis DB
+docker run --rm -d --name redis \
+  -p 6379:6379 \
+  -e REDIS_PASSWORD=${REDIS_PASSWORD} \
+  bitnami/redis:7.0.15-debian-12-r13
 fi
 
 export PGPASSWORD="${DATABASE_PASSWORD}"

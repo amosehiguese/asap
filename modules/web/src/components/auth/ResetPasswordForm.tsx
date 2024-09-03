@@ -6,16 +6,16 @@ import { useResetPassword } from "../../hooks/useResetPassword"
 
 type PropTypes = {
   token: string,
-  user: string,
+  email: string,
 }
 
-const ResetPasswordForm = ({token, user}: PropTypes) => {
+const ResetPasswordForm = ({token, email}: PropTypes) => {
   const {register, handleSubmit, formState: { errors }} = useForm<resetPasswordSchemaType>({
     resolver: zodResolver(resetPasswordSchema)
   })
   const { resetPassword, isLoading }  = useResetPassword()
   const onSubmit: SubmitHandler<resetPasswordSchemaType> = ({newPassword}) => {
-    resetPassword({newPassword, token, userId: user})
+    resetPassword({newPassword, token, email: email})
   }
 
   return (

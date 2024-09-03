@@ -37,27 +37,25 @@ type VerificationEmail struct {
 	Name              string
 	Email             string
 	VerificationToken string
-	Origin            string
 }
 
-func NewVerificationEmail(name, email, verificationToken, origin string) *VerificationEmail {
+func NewVerificationEmail(name, email, verificationToken string) *VerificationEmail {
 	return &VerificationEmail{
 		Name:              name,
 		Email:             email,
 		VerificationToken: verificationToken,
-		Origin:            origin,
 	}
 }
 
 func (ve *VerificationEmail) SendVerificationEmail() error {
-	verifyEmailUrl := fmt.Sprintf("%s/user/verify-token?token=%s&email=%s", ve.Origin, ve.VerificationToken, ve.Email)
 	message := fmt.Sprintf(`
 	<h4>Hi %s</h4>,
 	<p> Welcome to Doctors Corner </p>
-    <p>To verify your email address and complete your registration, please click the link: <a href="%s">Verify Email</a></p>
+    <p>To verify your email address and complete your registration, please verify your email address by entering the following verifcation code: %s</p>
+	<p>If you did not initiate this request, please ignore this email</p>
     <p>Thanks,</p>
-    <p>The DC Team</p>
-	`, ve.Name, verifyEmailUrl)
+    <p>The ASAP Team</p>
+	`, ve.Name, ve.VerificationToken)
 
 	config := config.GetConfig().SMTP
 	subject := "Email Confirmation"
@@ -105,7 +103,7 @@ func (rpe *ResetPasswordEmail) SendResetPasswordEmail() error {
     <p>To reset your password, please click the link: <a href="%s">Reset Password</a></p>
     <p>If you didn't request a password reset, you can safely ignore this email.</p>
     <p>Thanks,</p>
-    <p>The DC Team</p>
+    <p>The ASAP Team</p>
 	`, rpe.Name, resetUrl)
 
 	config := config.GetConfig().SMTP

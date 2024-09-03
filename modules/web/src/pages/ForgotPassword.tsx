@@ -10,7 +10,7 @@ const ForgotPassword = () => {
     <>
       {/* Header */}
       <Helmet>
-        <title> Forgot Password | Syp</title>
+        <title> Forgot Password | Asap</title>
         <meta name="description" content="Reset your Syp password quickly and easily. Receive a reset link if your email is registered with us." />
         <link rel="canonical" href={`${window.location.origin}/auth/forgot-password`} />
       </Helmet>

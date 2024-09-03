@@ -3,7 +3,14 @@ import type { IAuth, IUser } from "../../interfaces";
 import { RootState } from "../../store";
 
 const initialState: IAuth = {
-  loggedUser: null
+  loggedUser: {
+    id: "sldfho2034u",
+    firstname: "Amos",
+    lastname: "Ehiguese",
+    email: "amosehiguese@gmail.com",
+    verified: true,
+    verificationBadge: true
+  }
 }
 
 const userSlice = createSlice({

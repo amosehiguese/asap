@@ -13,7 +13,7 @@ export interface IAuth {
 
 export interface IResetPassword {
   token: string
-  userId: string
+  email: string
   newPassword: string
 }
 

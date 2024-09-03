@@ -46,7 +46,7 @@ export const authApi = createApi({
 
     verifyOtp: builder.mutation<IUser, IOtp>({
       query: (credentials) => ({
-        url: "/verify-otp",
+        url: "/verify-email",
         method: "POST",
         body: credentials
       })
@@ -61,11 +61,11 @@ export const authApi = createApi({
     }),
 
     sendOtp: builder.query<void,void>({
-      query: () => "/send-otp"
+      query: () => "/send"
     }),
 
     logout: builder.query<void,void>({
-      query: () => "/check-auth"
+      query: () => "/logout"
     })
   })
 })

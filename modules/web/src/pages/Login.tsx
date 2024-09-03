@@ -9,7 +9,7 @@ const Login = () => {
     <>
       {/* Header */}
       <Helmet>
-        <title> Login | Syp</title>
+        <title> Login | Asap</title>
         <meta name="description" content="Login to Syp. Your AI-based symptom checker" />
         <link rel="canonical" href={`${window.location.origin}/auth/login`} />
       </Helmet>

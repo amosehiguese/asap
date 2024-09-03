@@ -6,7 +6,7 @@ import (
 	"asap/store"
 	"pkg/config"
 
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
 )
 

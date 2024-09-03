@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import * as _ from   "../../node_modules/@reduxjs/toolkit/dist/query/react/buildHooks";
 import { useResetPasswordMutation } from "../services/api";
 import { useToast } from "./useToast";
-import { toast } from "sonner";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 export const useResetPassword = () => {

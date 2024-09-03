@@ -15,8 +15,8 @@ const VerificationPage = () => {
   return (
     <>
     <Helmet>
-        <title>Email Verification - Syp</title>
-        <meta name="description" content="Verify your email address for Syp. Enter the OTP sent to your email to confirm your identity and continue using Syp." />
+        <title>Email Verification | Asap</title>
+        <meta name="description" content="Verify your email address for Asap. Enter the OTP sent to your email to confirm your identity and continue using Asap." />
         <link rel="canonical" href={`${window.location.origin}/auth/verification`} />
     </Helmet>
 

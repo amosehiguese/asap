@@ -5,7 +5,7 @@ const Signup = () => {
   return (
     <>
       <Helmet>
-        <title>Signup | Syp</title>
+        <title>Signup | Asap</title>
         <meta name="description" content="Signup to Syp, your AI-based symptom checker." />
         <link rel="canonical" href={`${window.location.origin}/auth/signup`} />
       </Helmet>

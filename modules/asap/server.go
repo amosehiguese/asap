@@ -7,11 +7,12 @@ import (
 	"strconv"
 	"time"
 
+	"asap/middleware"
 	"asap/routes"
 	"asap/store"
 	"pkg/config"
 
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
 )
 
@@ -33,9 +34,15 @@ func run(log *zap.Logger) error {
 	db.AutoMigrate()
 	log.Info("connection to database established", zap.String("port", config.Database.Port))
 
+	// Set up Redis
+	rc, _ := store.RedisConn(config)
+
+	// Middlewares
+	middleware.FiberMiddleware(app, log, config)
+
 	// Set up Routes
 	api := app.Group("/api")
-	routes.MainRoutesV1(api, *config, log)
+	routes.MainRoutesV1(api, config, rc, log)
 	log.Info("Routes set up successfully.")
 
 	// Set up Server
